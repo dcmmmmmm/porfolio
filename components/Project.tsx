@@ -21,15 +21,15 @@ interface Project {
   githubUrl: string;
 }
 
-export default function Projects() {
-  return (
-    <Suspense>
-      <ProjectsContent />
-    </Suspense>
-  );
-}
+// export default function Projects() {
+//   return (
+//     <Suspense>
+//       <ProjectsContent />
+//     </Suspense>
+//   );
+// }
 
-function ProjectsContent () {
+export default function Projects () {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectData, setProjectData] = useState({
     title: "",
