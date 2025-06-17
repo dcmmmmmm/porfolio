@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { FaGithub, FaExternalLinkAlt, FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import UploadZone from "./Uploadzone";
 import toast from "react-hot-toast";
@@ -19,7 +19,15 @@ interface Project {
   githubUrl: string;
 }
 
-export default function Projects () {
+export default function Projects() {
+  return (
+    <Suspense>
+      <ProjectsContent />
+    </Suspense>
+  );
+}
+
+function ProjectsContent () {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectData, setProjectData] = useState({
     title: "",
