@@ -1,5 +1,7 @@
 "use client";
-
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { Suspense, useState } from "react";
