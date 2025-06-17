@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.9.0",
+    "prisma": "^6.10.0",
     "@uploadthing/react": "^7.3.1",
     "framer-motion": "^12.17.0",
     "mongoose": "^8.15.1",
@@ -31,7 +32,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
-    "prisma": "^6.9.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
