@@ -125,29 +125,21 @@ function ProjectsContent () {
     setLoading(false);
   }
   // ferching data
-  const fetchProjects = async () => {
-    try {
-      const response = await fetch('/api/projects', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to fetch projects');
-      }
-
-      const data = await response.json();
-      setProjects(data.projects);
-    } catch (error) {
-      console.error('Error fetching projects:', error);
-    }
-  };
-
   React.useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects');
+        if(!response.ok) {
+          throw new Error('Lỗi ko lấy được dữ liệu');
+        }
+        const data = await response.json();
+        setProjects(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
     fetchProjects();
-  }, []);
+  }, [])
   return (
     <section id="projects" className="py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 min-h-screen">
       <div className="container mx-auto px-4">
