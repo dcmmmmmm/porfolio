@@ -128,7 +128,7 @@ function ProjectsContent () {
   React.useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('/api/projects');
+        const response = await fetch('/api/projects', { cache: 'no-store' });
         if(!response.ok) {
           throw new Error('Lỗi ko lấy được dữ liệu');
         }
