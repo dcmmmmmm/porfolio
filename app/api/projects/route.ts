@@ -1,6 +1,10 @@
 import {prisma} from "@/lib/prisma";
 import { NextResponse, NextRequest } from "next/server";
 
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
+
 export async function GET(request: NextRequest) {
   try {
     const projects = await prisma.project.findMany({
