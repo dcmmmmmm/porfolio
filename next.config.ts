@@ -19,8 +19,10 @@ const nextConfig: NextConfig = {
         hostname: "093ya7ld4f.ufs.sh",
       },
     ]
+  },
+  experimental: {
+    serverActions: true
   }
-
 };
 
 export default nextConfig;
